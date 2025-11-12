@@ -1,16 +1,4 @@
 
-## 🧠 **README.md**
-
-````markdown
-<h1 align="center">🎬 Movie Streaming Dashboard</h1>
-
-<p align="center">
-  <b>Built with Next.js 15, TypeScript, and TMDB API</b><br/>
-  A modern, cinematic web app that fetches and displays live movie data.
-</p>
-
----
-
 ## 🚀 Project Overview
 
 This project is a **Next.js 15** web application that integrates with **The Movie Database (TMDB) API** to fetch and display movies dynamically.  
@@ -174,20 +162,3 @@ next build
 * [ ] Support **dark/light theme toggle**
 
 ---
-
-## 🏁 Summary
-
-This project highlights:
-
-* Clean, modern UI development using **Next.js + Tailwind**
-* Robust **API integration** with retries and type safety
-* Efficient **component-based architecture**
-* Full **deployment workflow** using Vercel
-
-> Built with ❤️ by Sameer Kumar Maurya
-
-```
-
-
-Would you like me to create that **README banner image** (modern gradient + icons) for you next?
-```
