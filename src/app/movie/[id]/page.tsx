@@ -1,6 +1,6 @@
-import { fetchMovieById } from "../../../../lib/api";
+import { fetchMovieById } from "../../../lib/api";
 import Image from "next/image";
-import BackButton from "../../../../components/BackButton";
+import BackButton from "../../../components/BackButton";
 import { FaStar, FaPlay, FaPlus } from "react-icons/fa";
 
 // ✅ Next.js 15 compatible type

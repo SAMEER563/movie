@@ -1,6 +1,6 @@
-import { fetchMovies } from "../../lib/api";
-import HeroBanner from "../../components/HeroBanner";
-import MovieRow from "../../components/MovieRow";
+import { fetchMovies } from "../lib/api";
+import HeroBanner from "../components/HeroBanner";
+import MovieRow from "../components/MovieRow";
 
 export default async function HomePage() {
   const [popular, topRated, upcoming] = await Promise.all([

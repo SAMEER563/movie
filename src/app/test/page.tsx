@@ -1,4 +1,4 @@
-import { fetchMovies } from "../../../lib/api";
+import { fetchMovies } from "../../lib/api";
 
 export default async function TestPage() {
   const movies = await fetchMovies("popular");
