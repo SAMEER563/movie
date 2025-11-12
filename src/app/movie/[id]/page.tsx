@@ -1,15 +1,17 @@
 import { fetchMovieById } from "../../../../lib/api";
 import Image from "next/image";
-import Link from "next/link";
 import BackButton from "../../../../components/BackButton";
 import { FaStar, FaPlay, FaPlus } from "react-icons/fa";
 
-interface MovieDetailPageProps {
-  params: { id: string };
-}
-
-export default async function MovieDetailPage({ params }: MovieDetailPageProps) {
-  const movie = await fetchMovieById(params.id);
+// ✅ Next.js 15 compatible type
+export default async function MovieDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  // ✅ Wait for params (Next.js now passes it as a Promise in async pages)
+  const { id } = await params;
+  const movie = await fetchMovieById(id);
 
   const posterUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
