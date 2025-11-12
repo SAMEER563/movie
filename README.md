@@ -1,36 +1,193 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## 🧠 **README.md**
 
-First, run the development server:
+````markdown
+<h1 align="center">🎬 Movie Streaming Dashboard</h1>
+
+<p align="center">
+  <b>Built with Next.js 15, TypeScript, and TMDB API</b><br/>
+  A modern, cinematic web app that fetches and displays live movie data.
+</p>
+
+---
+
+## 🚀 Project Overview
+
+This project is a **Next.js 15** web application that integrates with **The Movie Database (TMDB) API** to fetch and display movies dynamically.  
+It demonstrates **clean UI**, **API integration**, **TypeScript type safety**, and **responsive design** — all deployed on **Vercel**.
+
+🎯 **Goal:** Showcase professional frontend architecture, API handling, and deployment skills for real-world applications.
+
+---
+
+## 🖼️ Preview
+
+![Home Page Preview](https://image.tmdb.org/t/p/original/hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg)
+
+> ✨ *Cinematic design with live movie data from TMDB.*
+
+---
+
+## 🧩 Features
+
+✅ Fetch **Popular**, **Top Rated**, and **Upcoming** movies dynamically  
+✅ **Hero Banner** for top movie highlight  
+✅ **Dynamic Movie Detail Page** — `/movie/[id]`  
+✅ **Back to Home** button with smooth navigation  
+✅ **Error Handling** via custom `safeFetch()` with retries  
+✅ **Responsive UI** using Tailwind CSS  
+✅ **Type-safe API calls** with TypeScript interfaces  
+✅ **Deployed** on [Vercel](https://vercel.com)  
+✅ Works across all devices 📱💻
+
+---
+
+## 🏗️ Tech Stack
+
+| Category | Technology |
+|-----------|-------------|
+| Framework | [Next.js 15](https://nextjs.org/) |
+| Language | [TypeScript](https://www.typescriptlang.org/) |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) |
+| Icons | [React Icons](https://react-icons.github.io/react-icons/) |
+| API | [TMDB API](https://www.themoviedb.org/documentation/api) |
+| Hosting | [Vercel](https://vercel.com/) |
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-username/movie.git
+cd movie
+````
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Add Environment Variables
+
+Create a `.env.local` file in your root directory:
+
+```bash
+TMDB_API_KEY=YOUR_TMDB_API_KEY
+TMDB_BASE_URL=https://api.themoviedb.org/3
+TMDB_IMAGE_BASE=https://image.tmdb.org/t/p/original
+```
+
+### 4️⃣ Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then visit 👉 **[http://localhost:3000](http://localhost:3000)**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Folder Structure
 
-## Learn More
+```
+src/
+│
+├── app/
+│   ├── page.tsx                # Home page
+│   ├── movie/
+│   │   └── [id]/page.tsx       # Dynamic movie details
+│
+├── components/
+│   ├── HeroBanner.tsx
+│   ├── MovieRow.tsx
+│   ├── BackButton.tsx
+│
+├── lib/
+│   ├── api.ts                  # TMDB API + safeFetch logic
+│   ├── types.ts                # TypeScript interfaces
+│
+├── public/
+│
+├── .env.local
+└── next.config.js
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 API Integration (TMDB)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Example API Request
 
-## Deploy on Vercel
+```ts
+https://api.themoviedb.org/3/movie/popular?api_key=YOUR_API_KEY&language=en-US
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Custom Fetch Utility
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```ts
+async function safeFetch(url: string, retries = 2): Promise<Response> {
+  try {
+    const res = await fetch(url, {
+      headers: { "User-Agent": "NextJS-StreamingDashboard/1.0" },
+    });
+    if (!res.ok) throw new Error(`Failed: ${res.status}`);
+    return res;
+  } catch (err) {
+    if (retries > 0) return safeFetch(url, retries - 1);
+    throw err;
+  }
+}
+```
+
+---
+
+## 🖥️ Deployment
+
+This project is **deployed on Vercel**.
+
+🔗 **Live Demo:** [https://story-bit.vercel.app/](https://story-bit.vercel.app/)
+
+Build command:
+
+```bash
+next build
+```
+
+---
+
+## 📸 Screenshots
+
+| Home Page                                                                    | Movie Detail                                                                   |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| ![Home](https://image.tmdb.org/t/p/original/qskMJe62v9kPj4tD9UawIGW0WxD.jpg) | ![Detail](https://image.tmdb.org/t/p/original/hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg) |
+
+---
+
+## 🔮 Future Enhancements
+
+* [ ] Add **search functionality**
+* [ ] Implement **user authentication (login/favorites)**
+* [ ] Add **loading skeletons**
+* [ ] Integrate **pagination/infinite scroll**
+* [ ] Support **dark/light theme toggle**
+
+---
+
+## 🏁 Summary
+
+This project highlights:
+
+* Clean, modern UI development using **Next.js + Tailwind**
+* Robust **API integration** with retries and type safety
+* Efficient **component-based architecture**
+* Full **deployment workflow** using Vercel
+
+> Built with ❤️ by Sameer Kumar Maurya
+
+```
+
+
+Would you like me to create that **README banner image** (modern gradient + icons) for you next?
+```
