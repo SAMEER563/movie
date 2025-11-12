@@ -149,7 +149,7 @@ next build
 
 | Home Page                                                                    | Movie Detail                                                                   |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| ![Home](https://image.tmdb.org/t/p/original/qskMJe62v9kPj4tD9UawIGW0WxD.jpg) | ![Detail](https://image.tmdb.org/t/p/original/hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg) |
+| ![Home](https://github.com/SAMEER563/movie/blob/main/home%20page.png) | ![Detail](https://github.com/SAMEER563/movie/blob/main/detail%20page.png) |
 
 ---
 
