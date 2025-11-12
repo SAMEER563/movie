@@ -10,7 +10,7 @@ It demonstrates **clean UI**, **API integration**, **TypeScript type safety**, a
 
 ## 🖼️ Preview
 
-![Home Page Preview](https://image.tmdb.org/t/p/original/hpXBJxLD2SEf8l2CspmSeiHrBKX.jpg)
+![Home Page Preview](https://github.com/SAMEER563/movie/blob/main/home%20page.png)
 
 > ✨ *Cinematic design with live movie data from TMDB.*
 
