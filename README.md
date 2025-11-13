@@ -47,7 +47,7 @@ It demonstrates **clean UI**, **API integration**, **TypeScript type safety**, a
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/movie.git
+git clone https://github.com/SAMEER563/movie.git
 cd movie
 ````
 
